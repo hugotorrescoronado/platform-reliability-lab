@@ -1,47 +1,111 @@
-# Service Level Indicators (SLIs)
+# Production Readiness Review
 
-## What is an SLI
+## Purpose
 
-A Service Level Indicator measures system performance from a user's perspective.
+A Production Readiness Review (PRR) verifies that a service is prepared
+to operate safely, reliably, and securely in a production environment.
 
-## Common SLIs
+---
 
-### Availability
+## Production Readiness Workflow
 
-Percentage of successful requests.
+```mermaid
+flowchart TD
 
-Example:
+    A[Reliability]
+    B[Security]
+    C[Monitoring]
+    D[Alerting]
+    E[Runbooks]
+    F[On Call Support]
 
-99.95%
+    A --> G[Production Approval]
+    B --> G
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+```
 
-### Latency
+---
 
-Response times.
+## Reliability
 
-Examples:
+Before production deployment:
 
-- p50
-- p95
-- p99
+- SLOs defined
+- SLIs measured
+- Error budgets established
+- Capacity planning completed
+- Load testing completed
 
-### Throughput
+---
 
-Requests per second.
+## Observability
 
-### Error Rate
+The service must provide:
 
-Percentage of failed requests.
+- Metrics
+- Dashboards
+- Alerts
+- Logs
+- Traces
 
-## Example
+Teams should be able to identify issues quickly using observability tooling.
 
-Availability:
+---
 
-99.95%
+## Security
 
-Latency (p95):
+The service should implement:
 
-< 300ms
+- Authentication
+- Authorization
+- Encryption
+- Secrets Management
+- Vulnerability Scanning
 
-Error Rate:
+---
 
-< 0.1%
+## Operations
+
+Operational readiness should include:
+
+- Runbooks documented
+- Escalation process defined
+- On-call support available
+- Incident response procedures documented
+- Postmortem process established
+
+---
+
+## Production Readiness Checklist
+
+| Area | Status |
+|--------|--------|
+| Reliability | ✅ |
+| Security | ✅ |
+| Monitoring | ✅ |
+| Alerting | ✅ |
+| Runbooks | ✅ |
+| On-Call Support | ✅ |
+
+---
+
+## Benefits
+
+Production readiness reviews help:
+
+- Reduce operational risk
+- Improve reliability
+- Prevent service outages
+- Improve incident response
+- Increase deployment confidence
+
+---
+
+## Navigation
+
+| Previous | Home |
+|-----------|------|
+| postmortems.md | index.md |
