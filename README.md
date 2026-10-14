@@ -307,7 +307,7 @@ templates/incident-template.md
 templates/postmortem-template.md
 ```
 
-### Production Readiness Reviews
+### Production Readiness Review Templates
 
 ```text
 templates/readiness-review-template.md
